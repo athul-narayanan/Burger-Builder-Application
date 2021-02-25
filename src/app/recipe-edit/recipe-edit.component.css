@@ -1,0 +1,13 @@
+.row:not(:last-child){
+    margin-bottom : 1rem;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched
+{
+    border : 1px solid red;
+}
+
+.image-preview{
+    height: 20rem;
+}

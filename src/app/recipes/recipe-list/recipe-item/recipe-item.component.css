@@ -1,0 +1,12 @@
+.recipe-img{
+    width : 4rem;
+    height: 4rem;
+}
+
+.float_left{
+    float: left;
+}
+
+.active{
+  background-color: aqua;
+}

@@ -1,0 +1,11 @@
+<div class="row">
+  <a [routerLink]="[index]" style="cursor: pointer;" routerLinkActive="active">
+    <div class="col-md-10 float_left">
+      <h4>{{recipe.name}}</h4>
+      <p>{{recipe.description}}</p>
+    </div>
+    <div class="col-md-2 float_left">
+      <img class="recipe-img" [src]="recipe.imagePath" [alt]="recipe.name" />
+    </div>
+  </a>
+</div>

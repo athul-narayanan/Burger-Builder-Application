@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Recipe Book</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+          <a class="nav-link" aria-current="page" routerLink="/recipes">Recipes</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
+        </li> 
+        <li class="nav-item" routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a class="nav-link" routerLink="/authentication">Authentication</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a class="nav-link" style="cursor:pointer" (click)="onLogout()">Logout</a>
+        </li>
+        <li class="nav-item dropdown" ngbDropdown *ngIf="isAuthenticated">
+          <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="dropdown01" ngbDropdownToggle data-bs-toggle="dropdown" aria-expanded="false">Manage</a>
+          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdown01">
+            <li><a class="dropdown-item" ngbDropdownItem style="cursor: pointer;" (click)="saveData()">Save Data</a></li>
+            <li><a class="dropdown-item" ngbDropdownItem style="cursor: pointer;" (click)="fetchData()">Fetch Data</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
